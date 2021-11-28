@@ -27,29 +27,17 @@ function Home({ posts }: { posts: [] }) {
         <title>Project 13</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="relative max-w-4xl mx-auto mt-6">
+      <div className="relative max-w-4xl mx-auto mt-12">
         <div className="w-full pb-1 mb-2 border-b border-gray-200">
           <h1 className="px-4 text-3xl font-bold">For You</h1>
         </div>
-        {/* <div className="flex justify-between">
-          <textarea
-            className="w-full h-48 text-xs font-medium bg-transparent border-none outline-none dark:text-gray-50 dark:bg-black"
-            readOnly
-            value={JSON.stringify(posts, null, "\t")}
-          />
-          <textarea
-            className="w-full h-48 text-xs font-medium bg-transparent border-none outline-none dark:text-gray-50 dark:bg-black"
-            readOnly
-            value={JSON.stringify(data, null, "\t")}
-          />
-        </div> */}
         <div>
-          <h2 className="px-4 text-lg font-semibold lg:text-xl">Memories</h2>
+          <h2 className="px-4 text-xl font-bold">Memories</h2>
           <Slider onSelect={handleSelect} posts={posts} />
         </div>
         <hr className="mt-6 text-gray-200" />
         <div className="pt-2">
-          <h2 className="px-4 text-lg font-semibold lg:text-xl">
+          <h2 className="px-4 text-xl font-bold">
             Featured Photos
           </h2>
           <Slider
