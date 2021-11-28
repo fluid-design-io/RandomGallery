@@ -62,7 +62,7 @@ function Home({ posts }: { posts: [] }) {
 
 export default Home;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   function shuffle(array) {
     var tmp,
       current,
