@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 function Card({ post, onSelect, prefix, type }) {
   return (
@@ -13,20 +14,25 @@ function Card({ post, onSelect, prefix, type }) {
       animate={{ borderRadius: type === "featured" ? 8 : 24 }}
       exit={{ borderRadius: 0 }}
     >
-      <motion.img
+      <motion.div
         layout
         layoutId={`${prefix ? `${prefix}-` : ""}${post.id}-img`}
         transition={{ type: "spring", bounce: 0.2 }}
         onClick={() => onSelect({ post, prefix })}
-        src={`images/${post.fileName}`}
-        className={`object-cover object-center w-full ${
-          type === "featured" ? "h-[calc(100%-48px)]" : "h-full"
-        }`}
-        alt={`shot by ${post.name}`}
         initial={{ borderRadius: type === "featured" ? 8 : 24 }}
         animate={{ borderRadius: type === "featured" ? 8 : 24 }}
         exit={{ borderRadius: 0 }}
-      />
+      >
+        <Image
+          src={`images/${post.fileName}`}
+          width={"100%"}
+          height={400}
+          className={`object-cover object-center w-full ${
+            type === "featured" ? "h-[calc(100%-48px)]" : "h-full"
+          }`}
+          alt={`shot by ${post.name}`}
+        />
+      </motion.div>
       {type === "featured" ? (
         <motion.div
           className="inline-block"
